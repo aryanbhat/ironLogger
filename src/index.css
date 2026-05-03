@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1E3A5F;
+  --accent: #FF6B35;
+  --bg: #0D1B2A;
+  --surface: #162232;
+  --surface2: #1F3347;
+  --text: #F0F4F8;
+  --muted: #8BA3B8;
+  --success: #2D6A4F;
+  --danger: #C1121F;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body, #root {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  background-color: #0D1B2A;
+  color: #F0F4F8;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  min-width: 360px;
+}
+
+/* Remove number input spinners */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] { -moz-appearance: textfield; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #0D1B2A; }
+::-webkit-scrollbar-thumb { background: #1F3347; border-radius: 4px; }
+
+/* No scrollbar utility */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Date input styling */
+input[type='date'] {
+  color-scheme: dark;
+}
+
+/* Safe area */
+.pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+.pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+
+/* Smooth touch scrolling */
+.scroll-smooth { -webkit-overflow-scrolling: touch; }
+
+/* Focus visible ring */
+:focus-visible {
+  outline: 2px solid #FF6B35;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Active state for buttons */
+button { touch-action: manipulation; }
+
+/* Subtle dividers */
+.divider { height: 1px; background: #1F3347; }
+
+/* Card hover states */
+.card-interactive {
+  transition: background-color 0.15s ease;
+}
+.card-interactive:active {
+  background-color: #1F3347;
+}
+
+/* Input focus glow */
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.15);
+}
+
+/* Better text rendering */
+h1, h2, h3, p { text-rendering: optimizeLegibility; }
+
+/* Count-up number animation */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-count { animation: countUp 0.3s ease-out; }
